@@ -1,0 +1,262 @@
+.card {
+
+  // Functionality
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 40rem;
+
+  &__side {
+    height: 40rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &--front {
+      background-color: $color-white
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-green-light, $color-green-dark);
+      }
+
+      &-2 {
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark)
+      }
+
+      &-3 {
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+      }
+
+      &-4 {
+        background-image: linear-gradient(to right bottom, #C3AED6, #8675A9);
+      }
+
+      &-5 {
+        background-image: linear-gradient(to right bottom, #b2a48f, #7F7566);
+      }
+
+      &-6 {
+        background-image: linear-gradient(to right bottom, #e97171, #810000);
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // Front side styling
+  &__picture {
+    background-size: cover;
+    height: 20rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    
+    // Row 1
+    &--1 {
+      background-image: linear-gradient(to right bottom, $color-green-light, $color-green-dark), 
+      url('../img/flower.jpg');
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), 
+      url('../img/coffee-1.jpg');
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), 
+      url('../img/nat-7.jpg');
+    }
+    // Row 2
+    &--4 {
+      background-image: linear-gradient(to right bottom, #C3AED6, #8675A9), 
+      url('../img/cyberpunk-3.png');
+    }
+
+    &--5 {
+      background-image: linear-gradient(to right bottom, #b2a48f, #7F7566 ), 
+      url('../img/forest.jpg');
+    }
+
+    &--6 {
+      background-image: linear-gradient(to right bottom, #D04255, #a23342
+      ), 
+      url('../img/totoro.jpg');
+    }
+  }
+
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    border-radius: 5px;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, 
+      rgba($color-green-light, .85), 
+      rgba($color-green-dark, .85));
+    }
+    &--2 {
+      background-image: linear-gradient(to right bottom, 
+      rgba($color-primary-light, .85), 
+      rgba($color-primary-dark, .85));
+    }
+    &--3 {
+      background-image: linear-gradient(to right bottom, 
+      rgba($color-tertiary-light, .85), 
+      rgba($color-tertiary-dark, .85));
+    }
+
+    // Row 2
+    &--4 {
+      background-image: linear-gradient(to right bottom, 
+      rgba(#6b5d87, .85), 
+      rgba(#8675A9, .85));
+    }
+    &--5 {
+      background-image: linear-gradient(to right bottom, 
+      rgba(#7F7566, .85), 
+      rgba(#655D51, .85));
+    }
+    &--6 {
+      background-image: linear-gradient(to right bottom, 
+      rgba(#e97171, .85), 
+      rgba(#810000, .85));
+    }
+  }
+
+  &__details {
+    padding: 2rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {  
+        text-align: center;
+        font-size: 1.5rem;
+        padding: .7rem 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  // Back side styling
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 2rem;
+    // margin-top: 1rem;
+    // text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+  .phone_text {
+    display: none;
+  }
+
+  @include respond(phone) {
+    .phone_text { display: inline-block; }
+    .main_text { display: none; }
+  }
+
+
+
+
+  // @include respond(tab-port) {
+  @media only screen and (max-width: 56.25em),
+  only screen and (hover: none) {
+
+    height: auto;
+    border-radius: 10px;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0deg);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__details {
+      padding: 1rem 3rem;
+    }
+
+    // Back side styling
+    &__cta {
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0);
+      width: 100%;
+      padding: 6rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+      font-weight: 100;
+    }
+  }
+}
