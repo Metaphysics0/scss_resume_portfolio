@@ -35,7 +35,6 @@
     }
 
     @include respond(phone) {
-
       li:nth-child(3) {
         margin-top: 2rem;
       }
@@ -55,15 +54,15 @@
       margin: 0 3.5rem;
     }
   }
-  
+
   &__item {
     display: inline-block;
-    
+
     &:not(:last-child) {
       margin-right: 1.5rem;
     }
   }
-  
+
   &__link {
     &:link,
     &:visited {
@@ -71,14 +70,14 @@
       background-color: $color-grey-dark-3;
       text-transform: uppercase;
       display: inline-block;
-      transition: all .2s;
+      transition: all 0.2s;
       text-decoration: none;
     }
 
     &:hover,
     &:active {
       color: $color-secondary-dark;
-      box-shadow: 0 1rem 2rem rgba($color-black, .4);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
       transform: rotate(2deg) scale(1.2);
     }
   }
@@ -86,7 +85,7 @@
   &__copyright {
     border-top: 1px solid $color-grey-dark;
     padding-top: 2rem;
-    width: 80%; 
+    width: 80%;
     float: right;
   }
 }
