@@ -1,10 +1,12 @@
 .header {
   height: 85vh;
   background-image: linear-gradient(
-    to right bottom, 
-    rgba($color-primary-light, 0.8),
-    rgba($color-primary-dark, 0.803)), 
-    url('../img/wave.gif');
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.803)
+    ),
+    // url('../img/wave.gif');
+    url('https://64.media.tumblr.com/7a1e9e35c23208b718e44486d0774cd4/tumblr_nzp2ihdk9H1ukofkbo1_r4_540.gifv');
   background-size: cover;
   background-position: top;
   position: relative;
@@ -36,7 +38,7 @@
   &__logo {
     height: 10rem;
   }
-  
+
   &__text-box {
     position: absolute;
     top: 40%;
@@ -44,5 +46,4 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
-  
 }
