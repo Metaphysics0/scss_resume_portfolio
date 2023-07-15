@@ -10,7 +10,9 @@
   visibility: hidden;
   transition: all 0.3s;
 
-  @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  @supports (
+    (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
+  ) {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgba($color-black, 0.3);
@@ -46,6 +48,9 @@
   &__img {
     display: block;
     width: 100%;
+    &--p2 {
+      display: none;
+    }
   }
 
   &__text {
@@ -113,6 +118,10 @@
     &__left {
       width: 100%;
       height: 20vh;
+      &--gifs {
+        display: flex;
+        height: max-content;
+      }
     }
 
     &__right {
@@ -126,6 +135,11 @@
       float: left;
       object-fit: cover;
       height: 20vh;
+      &--p1 {
+        object-fit: contain;
+        max-width: 100%;
+        height: 35vh;
+      }
     }
 
     &__text {
